@@ -1,0 +1,22 @@
+.home {
+  width: 100%;
+
+  .continer {
+    display: flex;
+    gap: 2rem;
+    margin-top: 2rem;
+    // border: 2px solid red;
+    .left {
+    //   border: 1px solid black;
+      .filters {
+        position: sticky;
+        top: 10rem;
+        left: 5rem;
+      }
+    }
+
+    .items {
+    //   width: 70%;
+    }
+  }
+}

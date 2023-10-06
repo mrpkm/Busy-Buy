@@ -1,0 +1,62 @@
+.orders {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    width: 60%;
+
+    .heading {
+      font-size: 2rem;
+    }
+    .date {
+      font-size: 1.8rem;
+      color: grey;
+    }
+    .table {
+      background-color: white;
+
+      table {
+        padding: 20px;
+        padding: 8px;
+        border-radius: 8px;
+        thead {
+          th {
+            border-bottom: 2px solid black;
+            padding: 5px 10px;
+            background-color: rgb(233, 226, 226);
+            font-size: 1.5rem;
+            text-transform: capitalize;
+          }
+        }
+        tbody {
+          th {
+            padding: 5px 10px;
+            background-color: rgb(228, 226, 226);
+            font-size: 1.2rem;
+            text-transform: capitalize;
+            // color: red;
+          }
+        }
+        tfoot {
+          tr {
+            border: 2px solid red;
+            color: white;
+            background-color: rgb(158, 152, 152);
+            font-size: 1.2rem;
+            align-items: center;
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,108 @@
+.filter {
+  width: 17rem;
+  height: 20rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 5px 10px 10px rgb(210, 202, 202);
+
+  .container {
+    padding: 15px;
+
+    .range {
+      align-items: center;
+      text-align: center;
+      margin: 1rem;
+
+      h5 {
+        font-size: 1.2rem;
+        margin-bottom: 0.3rem;
+      }
+    }
+
+    .heading {
+      text-align: center;
+      font-size: 1.5rem;
+      text-transform: capitalize;
+      margin-bottom: 0.5rem;
+    }
+
+    .check {
+      margin: 0.2rem;
+      font-size: 1.3rem;
+
+      input {
+        margin: 0.2rem;
+      }
+    }
+    .cheackbox {
+      display: flex;
+      flex-direction: column;
+      gap: 0.2rem;
+      align-items: left;
+      text-align: center;
+      .checkInput {
+        display: flex;
+        align-items: left;
+        text-align: center;
+
+        input {
+          margin-right: 0.2rem;
+        }
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .filter {
+    width: fit-content;
+    height: fit-content;
+    .container {
+      padding: 15px;
+
+      .range {
+        align-items: center;
+        text-align: center;
+        margin: 0.2rem;
+
+        h5 {
+          font-size: 1rem;
+          margin-bottom: 0.1rem;
+        }
+      }
+
+      .heading {
+        text-align: center;
+        font-size: 1.5rem;
+        text-transform: capitalize;
+        margin-bottom: 0.2rem;
+      }
+
+      .check {
+        margin: 0.2rem;
+        font-size: 1.3rem;
+
+        input {
+          margin: 0.2rem;
+        }
+      }
+      .cheackbox {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+        align-items: left;
+        text-align: center;
+        .checkInput {
+          display: flex;
+          align-items: left;
+          text-align: center;
+
+          input {
+            margin-right: 0.2rem;
+          }
+        }
+      }
+    }
+  }
+}
