@@ -4,7 +4,6 @@ import { useValue } from '../../context/useContext'
 
 const Search = () => {
   const { searchQuery, handleSearach } = useValue();
-  // console.log(searchQuery)
   return (
     <div>
       <div className="search">

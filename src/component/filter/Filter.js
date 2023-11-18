@@ -10,6 +10,7 @@ const Filter = () => {
         <div className="heading">
           <h4>filters</h4>
         </div>
+        <br />
         <div className="range">
           <h5><label htmlFor="range">{rangePrice}</label></h5>
           <input

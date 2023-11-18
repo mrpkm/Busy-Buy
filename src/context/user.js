@@ -1,7 +1,8 @@
 import { createContext, useContext, useEffect, useState } from 'react'
-import { app } from '../firebase'
+import { app,  auth} from '../firebase'
 import { toast } from 'react-toastify'
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword } from 'firebase/auth'
+import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth'
+import { useNavigate } from 'react-router-dom';
 
 const userContext = createContext();
 
@@ -16,28 +17,8 @@ const UserContumContext = ({ children }) => {
     const [password, setPassword] = useState("")
     const [name, setName] = useState("")
     const [user, setUser] = useState(null);
+    // const navigate = useNavigate();
 
-
-    // making instante
-    const auth = getAuth(app)
-
-    const handleSignUp = (email, passsword) => {
-        try {
-            createUserWithEmailAndPassword(auth, email, passsword)
-            toast.success('Sign Up Successfull  !!', {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
-            });
-        }
-        catch (err) {
-            console.log("err", err)
-            toast.error('Some Thing went wrong  !!', {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
-            });
-        }
-
-    }
 
 
     useEffect(() => {
@@ -55,27 +36,10 @@ const UserContumContext = ({ children }) => {
         })
     }, [])
 
-    const handleSingIn = (email, password) => {
-        try {
-            signInWithEmailAndPassword(auth, email, password)
-            console.log("successful sing in")
-            toast.success('Sign In Successfull  !!', {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
-            });
-        } catch (err) {
-            console.log('err', err)
-            toast.error('Some went Wrong  !!', {
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
-            });
-        }
-    }
-
-
+   
 
     return (
-        <userContext.Provider value={{ handleSignUp, email, setEmail, password, setPassword, name, setName, user, setUser, auth, handleSingIn }}>
+        <userContext.Provider value={{ email, setEmail, password, setPassword, name, setName, user, setUser,}}>
             {children}
         </userContext.Provider>
     )

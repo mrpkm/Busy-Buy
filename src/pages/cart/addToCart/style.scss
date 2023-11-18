@@ -9,14 +9,15 @@
   display: flex;
   flex-wrap: wrap;
   width: 100%;
-  //   border: 2px solid red;
   gap: 0.5rem;
+  justify-content: center;
   .ccontaner {
     border: 1px solid blue;
     border-radius: 8px;
     width: 15rem;
     height: 20rem;
     position: relative;
+
 
     .image {
       width: 100%;

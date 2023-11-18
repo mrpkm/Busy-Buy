@@ -1,17 +1,28 @@
+@import '../../mixins.scss';
 .singIn {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  //   border: 1px solid black;
   margin-top: 4rem;
 
   .container {
-    // border: 1px solid black;
     display: flex;
     flex-direction: column;
     width: 30%;
     gap: 2rem;
+    @include lg{
+      width: 40%;
+    }
+    @include md{
+      width: 50%;
+    }
+    @include sm{
+      width: 60%;
+    }
+    @include ss{
+      width: 80%;
+    }
 
     .heading {
       font-size: 2.3rem;

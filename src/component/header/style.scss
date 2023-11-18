@@ -1,43 +1,78 @@
-.navbar{
+@import "../../mixins.scss";
+
+.navbar {
+  background-color: black;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 3%;
+  align-items: center;
+  color: white;
+
+  .logo {
+    font-size: 1.6rem;
+  }
+
+  .menubar {
+    background-color: white;
+    color: black;
+    border-radius: 6px;
+    padding: 5px 12px;
+    display: none;
+
+    @include md {
+      display: block;
+    }
+  }
+
+  .nav {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 5%;
-    width: 100%;
-    // background-color: cyan;
-    box-shadow: 0px 8px 15px rgb(235, 228, 228);
+    column-gap: 2rem;
+    @include md {
+      display: none;
+    }
 
-    .logo{
-        display: flex;
+    li {
+      color: black;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      cursor: pointer;
+      @include md {
+        border-bottom: 1px solid white;
+        padding: 10px 25px;
+        padding-bottom: 7px;
+
+        &:nth-last-child(1) {
+          border: none;
+        }
+      }
+
+      span {
+        color: white;
+        text-transform: capitalize;
+        font-size: 1.5rem;
         align-items: center;
-        gap: 1rem;
-        img{
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
+        text-align: center;
+
+        :last-child {
+          margin-bottom: -5px;
+          margin-right: -5px;
         }
+      }
     }
-
-    .nav{
-        ul{
-            display: flex;
-            gap: 2rem;
-
-            li{
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: .5rem;
-                font-size: 1.5rem;
-                cursor: pointer;
-
-                .cartTotal{
-                    border: 1px solid black;
-                    border-radius: 50%;
-                    padding: 5px 10px;
-                    color: orange;
-                }
-            }
-        }
+  }
+  .open-nav {
+    @include md {
+      display: flex;
+      position: absolute;
+      flex-direction: column;
+      row-gap: 0.5rem;
+      top: 7%;
+      right: 1%;
+      background-color: black;
+      color: white;
+      z-index: 10000;
+      border-radius: 8px;
     }
+  }
 }

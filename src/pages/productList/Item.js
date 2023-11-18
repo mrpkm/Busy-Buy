@@ -14,9 +14,9 @@ const Item = () => {
         <div className="item">
             {filterData.map((item, index) => {
                 const { image, title, price, id, qty } = item;
-                const sortTitle = title.slice(0, 20)
+                const sortTitle = title.slice(0, 17)
                 return (
-                    <div key={index} className="contaner">
+                    <div key={index} className="contaner-box">
                         <div className="image">
                             <img src={image} alt="img" />
                         </div>
