@@ -52,7 +52,7 @@ const Nav = () => {
             <li onClick={() => {
               signOut(auth)
               navigate('/signin')
-              toast.success('Sign Up Successfull  !!', {
+              toast.success('Log Out Successful  !!', {
                 position: toast.POSITION.TOP_RIGHT,
                 autoClose: 2000,
               });
