@@ -49,15 +49,18 @@ const Order = () => {
                                             )
                                         })}
                                     </tbody>
-                                    {/* <tfoot>
+                                    <tfoot>
                                         <tr >
                                             <td colSpan='3'>Total</td>
                                             <td colSpan='1'>
-                                                &#x20B9; {" "}
-                                                
+                                                &#x20B9; {list.order.reduce((acc, cur) => {
+                                                    console.log(cur.price)
+                                                    return Math.floor(acc + cur.price * cur.qty)
+                                                }, 0)}
+
                                             </td>
                                         </tr>
-                                    </tfoot> */}
+                                    </tfoot>
                                 </table>
                             </div>
                         </div>

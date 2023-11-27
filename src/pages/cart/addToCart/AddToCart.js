@@ -10,7 +10,7 @@ const AddToCart = () => {
 
             {cart.map((item, index) => {
                 const { image, title, price, id, qty } = item;
-                const sortTitle = title.slice(0, 17)
+                const sortTitle = title.slice(0, 12)
 
                 return (
                     <div key={index} className="ccontaner">

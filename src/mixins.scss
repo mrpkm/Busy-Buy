@@ -27,8 +27,13 @@
     @content;
   }
 }
+// @mixin ss {
+//   @media (max-width: 576px) {
+//     @content;
+//   }
+// }
 @mixin ss {
-  @media (max-width: 576px) {
+  @media (max-width: 410px) {
     @content;
   }
 }
