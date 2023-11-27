@@ -9,7 +9,7 @@ import { useUserAuth } from '../../context/user';
 import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify'
 import { useValue } from '../../context/useContext';
-import { FaBars, FaStore } from 'react-icons/fa'
+import { FaBars, FaHome, FaSignInAlt, FaStore } from 'react-icons/fa'
 import { AiOutlineClose } from 'react-icons/ai';
 import { auth } from '../../firebase'
 
@@ -42,7 +42,7 @@ const Nav = () => {
       </li>
 
       <div className={`nav ${showNav ? "open-nav" : " "}`}>
-        <li onClick={() => navigate('/')}><span><FcHome /></span> <span>home</span></li>
+        <li onClick={() => navigate('/')}><span><FaHome /></span> <span>home</span></li>
         <li onClick={() => navigate('/views')}><span><FaStore /></span> <span>product</span></li>
 
         {user ? (
@@ -63,7 +63,7 @@ const Nav = () => {
         ) :
           <li onClick={
             () => navigate('/signin')
-          }><span></span> <RiLoginCircleFill /><span>sign in</span></li>
+          }><span><FaSignInAlt /></span> <span>sign in</span></li>
         }
       </div>
 
