@@ -21,6 +21,21 @@ const Nav = () => {
   const { redTotal } = useValue();
   const [showNav, setShowNav] = useState(false);
 
+  const handleLogout = () => {
+    auth.signOut()
+      .then(() => {
+        navigate('/signin');
+        toast.success('Log Out Successful !!', {
+          position: toast.POSITION.TOP_RIGHT,
+          autoClose: 2000,
+        });
+      })
+      .catch((error) => {
+        console.error('Logout Error:', error.message);
+        // Handle error or display error toast message if needed
+      });
+  };
+
 
   return (
     <div className="navbar">
@@ -49,20 +64,19 @@ const Nav = () => {
           <>
             <li onClick={() => navigate('/buy')}><span><BsFillBagHeartFill /></span> <span>my order</span></li>
             <li className='cartCountnum' onClick={() => navigate('/cart')}><span><TbShoppingCartFilled /></span> <span>cart</span><strong className='cartTotal'>{redTotal}</strong></li>
-            <li onClick={() => {
-              signOut(auth)
-              navigate('/signin')
-<<<<<<< HEAD
-              toast.success('Log Out Successfull  !!', {
-=======
-              toast.success('Log Out Successful  !!', {
->>>>>>> f12950d3873d749efa26c231c2d91482d0b56a33
-                position: toast.POSITION.TOP_RIGHT,
-                autoClose: 2000,
-              });
-            }}>
-              <span> <TbLogout2 /> </span>
-              <span>logout</span></li>
+
+            {/* ------------- */}
+
+            <li onClick={handleLogout}>
+              <span><TbLogout2 /></span>
+              <span>logout</span>
+            </li>
+
+            {/* ------------- */}
+
+
+
+
           </>
         ) :
           <li onClick={
@@ -72,6 +86,7 @@ const Nav = () => {
       </div>
 
     </div>
+
   )
 }
 
