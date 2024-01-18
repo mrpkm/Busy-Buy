@@ -12,37 +12,31 @@ import Footer from "./component/footer/Footer";
 import PageNotFound from "./pages/pageNotFound/PageNotFound";
 
 function Apps() {
-    const { loding } = useValue();
-    return (
-        <div className="App">
-         {
-                loding
-                    ? (
-                        <LodingPage />
-                    ) : ( 
-            <BrowserRouter>
-                {/* <Nav /> */}
-                <Routes>
-                    <Route path="/" element={[<Nav />, <Deshboard />, <Footer />]} />
-                    <Route path="/views" element={[<Nav />, <Home />, <Footer />]} />
-                    <Route path="/cart" element={[<Nav />, <Cart />, <Footer />]} />
-                    <Route path="/buy" element={[<Nav />, <Order />, <Footer />]} />
-                    <Route
-                        path="/signin"
-                        element={[<Nav />, <SignIn />, <Footer />]}
-                    />
-                    <Route
-                        path="/register"
-                        element={[<Nav />, <Register />, <Footer />]}
-                    />
-                    <Route path="*" element={<PageNotFound />} />
-                </Routes>
-            </BrowserRouter>
-
-
-          )} 
-        </div>
-    );
+  const { loding } = useValue();
+  console.log("loding", loding);
+  return (
+    <div className="App">
+      {loding ? (
+        <LodingPage />
+      ) : (
+        <BrowserRouter>
+          {/* <Nav /> */}
+          <Routes>
+            <Route path="/" element={[<Nav />, <Deshboard />, <Footer />]} />
+            <Route path="/views" element={[<Nav />, <Home />, <Footer />]} />
+            <Route path="/cart" element={[<Nav />, <Cart />, <Footer />]} />
+            <Route path="/buy" element={[<Nav />, <Order />, <Footer />]} />
+            <Route path="/signin" element={[<Nav />, <SignIn />, <Footer />]} />
+            <Route
+              path="/register"
+              element={[<Nav />, <Register />, <Footer />]}
+            />
+            <Route path="*" element={<PageNotFound />} />
+          </Routes>
+        </BrowserRouter>
+      )}
+    </div>
+  );
 }
 
 export default Apps;
