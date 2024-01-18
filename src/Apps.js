@@ -24,8 +24,16 @@ function Apps() {
           <Routes>
             <Route path="/" element={[<Nav />, <Deshboard />, <Footer />]} />
             <Route path="/views" element={[<Nav />, <Home />, <Footer />]} />
-            <Route path="/cart" element={[<Nav />, <Cart />, <Footer />]} />
-            <Route path="/buy" element={[<Nav />, <Order />, <Footer />]} />
+            {loding ? (
+              <LodingPage />
+            ) : (
+              <Route path="/cart" element={[<Nav />, <Cart />, <Footer />]} />
+            )}
+            {loding ? (
+              <LodingPage />
+            ) : (
+              <Route path="/buy" element={[<Nav />, <Order />, <Footer />]} />
+            )}
             <Route path="/signin" element={[<Nav />, <SignIn />, <Footer />]} />
             <Route
               path="/register"
