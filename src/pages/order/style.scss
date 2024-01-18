@@ -22,13 +22,23 @@
     @include md{
       width: 100%;
     }
+    @include ss{
+      gap:0
+    }
 
     .heading {
       font-size: 2rem;
+      @include ss{
+        font-size: 1.2rem;
+      }
     }
+
     .date {
       font-size: 1.8rem;
       color: grey;
+      @include ss{
+        font-size: 1rem;
+      }
     }
     .table {
       background-color: white;
@@ -37,6 +47,9 @@
         padding: 20px;
         padding: 8px;
         border-radius: 8px;
+        @include ss{
+          padding: 5px;
+        }
         thead {
           th {
             border-bottom: 2px solid black;
@@ -44,6 +57,10 @@
             background-color: rgb(233, 226, 226);
             font-size: 1.5rem;
             text-transform: capitalize;
+            @include ss{
+              font-size: 1rem;
+              padding: 2px 4px;
+            }
           }
         }
         tbody {
@@ -52,6 +69,10 @@
             background-color: rgb(228, 226, 226);
             font-size: 1.2rem;
             text-transform: capitalize;
+            @include ss{
+              font-size: .8rem;
+              padding: 2px 4px;
+            }
             // color: red;
           }
         }
@@ -63,6 +84,9 @@
             font-size: 1.2rem;
             align-items: center;
             text-align: center;
+            @include ss{
+              font-size: .8rem;
+            }
           }
         }
       }
