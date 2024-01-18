@@ -186,6 +186,7 @@ const CostumeItemContext = ({ children }) => {
 
     // delete from cart item
     const removeToCart = async (id) => {
+        console.log(id)
         onAuthStateChanged(auth, async (user) => {
             if (user) {
                 await deleteDoc(doc(db, "users", user.uid, "carts", id));

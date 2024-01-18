@@ -15,11 +15,11 @@ function Apps() {
     const { loding } = useValue();
     return (
         <div className="App">
-            {/* {
+         {
                 loding
                     ? (
                         <LodingPage />
-                    ) : ( */}
+                    ) : ( 
             <BrowserRouter>
                 {/* <Nav /> */}
                 <Routes>
@@ -40,7 +40,7 @@ function Apps() {
             </BrowserRouter>
 
 
-            {/* )} */}
+          )} 
         </div>
     );
 }

@@ -3,8 +3,8 @@ import React, { useValue } from '../../../context/useContext'
 
 const AddToCart = () => {
     const { cart, removeToCart, increaseQty, decreaseQuantity } = useValue()
-    // console.log("cart", cart)
-    
+    console.log("cart", cart)
+
     return (
         <div className="items">
 
